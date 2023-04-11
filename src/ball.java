@@ -20,15 +20,16 @@ public class ball {
         color=icolor;
         v=iv;
     }
-    /*ball(String PAppletwindow) {
-        this.PAppletwindow =
-        Random diameter = new Random();
-        for (double d = 100; d < 200; d++)
-            System.out.println(diameter.nextDouble(1));
-    }*/
+    ball(String PAppletwindow) {
+        Random rnd = new Random();
+        float xpos = rnd.nextFloat(101,701);
+        float ypos = rnd.nextFloat(101, 701);
+        float diameter = rnd.nextFloat(101, 201);
+        male(xpos, ypos, diameter);
+    }
 
-    void male() {
-        window.circle((float) xpos,(float) ypos, (float) diameter);
+    void male(float xpos, float ypos, float diameter) {
+        window.circle( xpos, ypos, diameter);
     }
     public void move(double t) {
         System.out.println(v);
