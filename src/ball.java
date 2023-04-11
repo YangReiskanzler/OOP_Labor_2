@@ -1,5 +1,6 @@
 import processing.core.PApplet;
 
+import java.awt.*;
 import java.util.Random;
 
 public class ball {
@@ -10,8 +11,6 @@ public class ball {
     private int color;
     private double v;
     private double g = 98.1;
-    private ball[] baelle;
-    private int anzahl;
 
     ball(Fenster iwindow, double ixpos, double iypos, double idiameter, int icolor, double iv) {
         window=iwindow;
@@ -21,14 +20,15 @@ public class ball {
         color=icolor;
         v=iv;
     }
-    ball(PApplet window) {
+    /*ball(String PAppletwindow) {
+        this.PAppletwindow =
         Random diameter = new Random();
         for (double d = 100; d < 200; d++)
             System.out.println(diameter.nextDouble(1));
-    }
+    }*/
 
     void male() {
-        window.circle(100.0f,(float) ypos, 100.0f);
+        window.circle((float) xpos,(float) ypos, (float) diameter);
     }
     public void move(double t) {
         System.out.println(v);
