@@ -25,7 +25,11 @@ public class ball {
         float xpos = rnd.nextFloat(101,701);
         float ypos = rnd.nextFloat(101, 701);
         float diameter = rnd.nextFloat(101, 201);
-        male(xpos, ypos, diameter);
+        int[] ball= new int[10];
+        for (int i=0; i<ball.length; i++) {
+            male(xpos, ypos, diameter);
+        }
+
     }
 
     void male(float xpos, float ypos, float diameter) {
