@@ -29,10 +29,9 @@ public class ball {
     }
 
     void male(float xpos, float ypos, float diameter) {
-        window.circle( xpos, ypos, diameter);
+        window.circle(xpos, ypos, diameter);
     }
     public void move(double t) {
-        System.out.println(v);
         v=v+g*t;
         ypos=ypos+v*t;
         if(ypos >= window.height-50) {
