@@ -3,27 +3,25 @@ import processing.core.PApplet;
 import java.util.Random;
 
 public class Fenster extends PApplet {
-    Random rnd = new Random();
-    ball[] ball = new ball[rnd.nextInt(50)];
+    ball ball = new ball(this,100,100,200,100,0);
+    ball[] balls = new ball[100];
 
     @Override
     public void settings() {
         size(800, 800);
         Random rnd = new Random();
-        for (int x = 0; x < ball.length; x++) {
-            ball[x] = new ball("this");
+        for (int x = 0; x < balls.length; x++) {
+            balls[x] = new ball(this);
         }
     }
 
     @Override
     public void draw() {
         background(100);
-        Random rnd = new Random();
-        int rot = rnd.nextInt(1, 255);
-        int gruen = rnd.nextInt(1, 255);
-        int blau = rnd.nextInt(1, 255);
-        fill(rot, gruen, blau);
-        ball[5].male(float xpos, float ypos, float diameter);
+        for (int x = 0; x < balls.length; x++) {
+            balls[x].male();
+            balls[x].move(1 / frameRate);
+        }
     }
 }
 

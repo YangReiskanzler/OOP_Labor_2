@@ -11,6 +11,9 @@ public class ball {
     private int color;
     private double v;
     private double g = 98.1;
+    private int rot;
+    private int gruen;
+    private int blau;
 
     ball(Fenster iwindow, double ixpos, double iypos, double idiameter, int icolor, double iv) {
         window=iwindow;
@@ -20,20 +23,22 @@ public class ball {
         color=icolor;
         v=iv;
     }
-    ball(String PAppletwindow) {
+    ball(Fenster window) {
+        this.window = window;
         Random rnd = new Random();
-        float xpos = rnd.nextFloat(101,701);
-        float ypos = rnd.nextFloat(101, 701);
-        float diameter = rnd.nextFloat(101, 201);
-        int[] ball= new int[10];
-        for (int i=0; i<ball.length; i++) {
-            male(xpos, ypos, diameter);
+        xpos = rnd.nextFloat(101,701);
+        ypos = rnd.nextFloat(101, 701);
+        diameter = rnd.nextFloat(101, 201);
+        rot = rnd.nextInt(1, 255);
+        gruen = rnd.nextInt(1, 255);
+        blau = rnd.nextInt(1, 255);
+
         }
 
-    }
 
-    void male(float xpos, float ypos, float diameter) {
-        window.circle(xpos, ypos, diameter);
+    void male() {
+        window.fill(rot,gruen,blau);
+        window.circle((float)xpos, (float)ypos, (float) diameter);
     }
     public void move(double t) {
         v=v+g*t;
